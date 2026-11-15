@@ -1,4 +1,5 @@
 // botões de prioridade: só um fica ativo por vez
+
 export const priorityButtons = document.querySelectorAll(".qualifications");
 priorityButtons.forEach((btn) => {
   btn.addEventListener("click", () => {

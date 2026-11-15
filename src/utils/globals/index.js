@@ -1,12 +1,17 @@
-import { datasLocalstorage, locationAmount, container } from "../const/index.js";
+import {
+  datasLocalstorage,
+  locationAmount,
+  container,
+} from "../const/index.js";
 import { remove, edit } from "../crud/index.js";
+import { cardVazio } from "../script.js";
 ////////////////////////////// CONTADOR TOTAL //////////////////////////////////////
 
 export function totalAMount() {
   if (datasLocalstorage.length === 0) {
-    return (locationAmount.innerHTML = `<h4>total de atividades : <p>0</p></h4>`);
+    return (locationAmount.innerHTML = `<h4>total de atividades : </h4> <p>0</p>`);
   }
-  locationAmount.innerHTML = `<h4>total de atividades : <p>${datasLocalstorage.length}</p></h4>`;
+  locationAmount.innerHTML = `<h4>total de atividades :</h4> <p>${datasLocalstorage.length}</p>`;
 }
 ////////////////////////////// SALVAR //////////////////////////////////////////////////
 
@@ -24,6 +29,7 @@ export function salvar() {
 
 export function renderizar() {
   container.innerHTML = "";
+  cardVazio();
 
   datasLocalstorage.forEach((element) => {
     // divs

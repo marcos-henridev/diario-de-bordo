@@ -11,6 +11,37 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <header class="header">
+      <div class="foto_perfil"></div>
+      <h4 class="name_user"></h4>
+      <button
+        class="btn_seta-menu"
+        style="background-color: transparent; border: none"
+      >
+        <img
+          class="seta_menu"
+          style="height: 25px; margin-left: 1rem"
+          src="../public/seta.svg"
+          alt=""
+        />
+      </button>
+      <div class="subm-menu">
+        <ul>
+          <li class="icom_menu">Icons perfil</li>
+          <button
+            class="btn_seta-menu"
+            style="background-color: transparent; border: none"
+          >
+            <img
+              class="seta_menu"
+              style="height: 25px; margin-left: 1rem"
+              src="../public/setablack.svg"
+              alt=""
+            />
+          </button>
+        </ul>
+      </div>
+    </header>
     <div class="container">
       <aside class="aside">
         <h2 class="header-aside">Cadastrar diário de bordo</h2>
@@ -49,11 +80,15 @@
         </form>
       </aside>
       <main>
-        <h1>Bom dia, <span class="insert-name_user"></span>!</h1>
+        <h1>
+          <span class="comprimento_dinamico"></span>,
+          <span class="insert-name_user"></span>!
+        </h1>
         <div class="amount"></div>
-        <div></div>
+
         <section class="Recent-entries">
           <h4>Entradas recentes</h4>
+          <div class="default_null"><p>Nenhuma atividade encontrada</p></div>
           <div class="datas-entries"></div>
         </section>
       </main>
