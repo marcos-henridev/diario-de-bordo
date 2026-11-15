@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diário de bordo | Anotações</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside class="aside">
+        <h2 class="header-aside">Cadastrar diário de bordo</h2>
+        <form class="form">
+          <label for="title">Título</label>
+          <input data-salvo="title" id="title" type="text" required />
+          <label for="date">Data</label>
+          <input data-salvo="date" id="date" type="text" required />
+          <label for="description">Descrição</label>
+          <input data-salvo="description" id="description" type="text" />
+          <div class="priorities">
+            <button
+              type="button"
+              class="qualifications"
+              data-priority="tranquilo"
+            >
+              Tranquilo
+            </button>
+            <button
+              type="button"
+              class="qualifications active"
+              data-priority="medio"
+            >
+              Médio
+            </button>
+            <button
+              type="button"
+              class="qualifications"
+              data-priority="urgente"
+            >
+              Urgente
+            </button>
+          </div>
+
+          <button type="submit" id="btn-submit">salvar</button>
+        </form>
+      </aside>
+      <main>
+        <h1>Bom dia, <span class="insert-name_user"></span>!</h1>
+        <div class="amount"></div>
+        <div></div>
+        <section class="Recent-entries">
+          <h4>Entradas recentes</h4>
+          <div class="datas-entries"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
+
+    <script type="module" src="utils/script.js"></script>
+  </body>
+</html>
