@@ -1,7 +1,18 @@
 import { form, datasLocalstorage, idEdit } from "./const/index.js";
 import { saveEdit } from "./crud/index.js";
-import { salvar, renderizar, totalAMount } from "./globals/index.js";
-
+import {
+  salvar,
+  renderizar,
+  totalAMount,
+  setSubMenu,
+  setSubMenu_icon,
+  renderIcons,
+  carregarFoto,
+} from "./globals/index.js";
+carregarFoto();
+setSubMenu();
+setSubMenu_icon();
+renderIcons();
 let texto;
 dinamicoComprimento();
 const saucaoDinamica = document.querySelector(".comprimento_dinamico");
@@ -25,7 +36,7 @@ function dinamicoComprimento() {
 
 const name = document.querySelector(".name_user");
 
-const setName = (name.innerHTML = "Marcos ");
+const setName = (name.innerHTML = "Delvanir Siqueira");
 
 const saudacoes = document.querySelector(".insert-name_user");
 saudacoes.textContent = setName.trim();

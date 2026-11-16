@@ -7,6 +7,19 @@ priorityButtons.forEach((btn) => {
     btn.classList.add("active");
   });
 });
+export const iconsPerfil = [
+  "Robozinho@1x.png",
+  "Cacto@1x.png",
+  "Cafezinho@1x.png",
+  "Planeta@1x.png",
+  "Sorvete@1x.png",
+];
+export const pastaIcons = "../public/iconsPerfil/";
+export const fotoPerfil = document.querySelector(".foto_perfil");
+export const SubMenuToggle = document.querySelector(".subm-menu");
+export const seta_sub_subMenu = document.querySelector(".btn_seta-SubMenu");
+export const iconSub = document.querySelector(".icons");
+export const buttonOpenMenu = document.querySelector(".btn_seta-menu");
 export const form = document.querySelector(".form");
 export const container = document.querySelector(".datas-entries");
 export let datasLocalstorage =

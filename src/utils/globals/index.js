@@ -2,15 +2,59 @@ import {
   datasLocalstorage,
   locationAmount,
   container,
+  buttonOpenMenu,
+  SubMenuToggle,
+  iconSub,
+  seta_sub_subMenu,
+  iconsPerfil,
+  pastaIcons,
+  fotoPerfil,
 } from "../const/index.js";
 import { remove, edit } from "../crud/index.js";
 import { cardVazio } from "../script.js";
 ////////////////////////////// CONTADOR TOTAL //////////////////////////////////////
 
+export function renderIcons() {
+  iconsPerfil.forEach((element) => {
+    const img = document.createElement("img");
+    img.src = pastaIcons + element;
+    img.alt = element;
+    img.className = "icon_opcao";
+
+    iconSub.appendChild(img);
+    img.addEventListener("click", function () {
+      trocarFoto(element);
+    });
+  });
+}
+function trocarFoto(nome) {
+  fotoPerfil.style.backgroundImage = `url("${pastaIcons}${nome}")`;
+  localStorage.setItem("fotoPerfil", nome);
+}
+export function carregarFoto() {
+  const salva = localStorage.getItem("fotoPerfil");
+  if (salva) trocarFoto(salva);
+}
+export const setSubMenu = () => {
+  buttonOpenMenu.addEventListener("click", function () {
+    if (SubMenuToggle.style.display === "none") {
+      SubMenuToggle.style.display = "flex";
+    } else {
+      SubMenuToggle.style.display = "none";
+    }
+  });
+};
+export const setSubMenu_icon = () => {
+  seta_sub_subMenu.addEventListener("click", function () {
+    if (iconSub.style.display === "none") {
+      iconSub.style.display = "grid";
+    } else {
+      iconSub.style.display = "none";
+    }
+  });
+};
+
 export function totalAMount() {
-  if (datasLocalstorage.length === 0) {
-    return (locationAmount.innerHTML = `<h4>total de atividades : </h4> <p>0</p>`);
-  }
   locationAmount.innerHTML = `<h4>total de atividades :</h4> <p>${datasLocalstorage.length}</p>`;
 }
 ////////////////////////////// SALVAR //////////////////////////////////////////////////
