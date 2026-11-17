@@ -335,3 +335,117 @@ main {
   border-color: var(--accent);
   color: var(--on-accent);
 }
+
+/* =========================================================
+   RESPONSIVIDADE
+   Só ajusta layout/tamanhos — cores e estilos continuam iguais
+   ========================================================= */
+
+/* notebooks e telas médias */
+@media (max-width: 1200px) {
+  .container {
+    width: 90%;
+  }
+  .header .foto_perfil {
+    margin-left: 5%;
+  }
+}
+
+/* tablets: aside e main lado a lado, sem posição absoluta */
+@media (max-width: 1024px) {
+  .container {
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .aside {
+    position: static;
+    width: 38%;
+    flex-shrink: 0;
+  }
+  main {
+    margin-left: 0;
+    width: auto;
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+/* tablets pequenos e celulares: uma coluna só */
+@media (max-width: 768px) {
+  .header {
+    margin-bottom: 1.5rem;
+  }
+  .header .foto_perfil {
+    margin-left: 1rem;
+  }
+  .header .name_user {
+    margin-left: 1rem;
+  }
+  /* submenu abre para baixo para não sair da tela */
+  .subm-menu {
+    left: 0;
+    top: 100%;
+  }
+  .icons {
+    left: 0;
+    top: 100%;
+    width: min(20rem, 90vw);
+  }
+  .container {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 1rem 1rem;
+  }
+  .aside {
+    width: 100%;
+  }
+  main {
+    width: 100%;
+  }
+  .amount p {
+    margin: 1rem 0;
+  }
+}
+
+/* celulares */
+@media (max-width: 480px) {
+  .header {
+    height: 4rem;
+  }
+  .header .foto_perfil {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+  main h1 {
+    font-size: 1.5rem;
+  }
+  .default_null {
+    height: 10rem;
+    text-align: center;
+  }
+  .aside .form #btn-submit {
+    width: 100%;
+  }
+  .aside .form .priorities {
+    flex-wrap: wrap;
+  }
+  .aside .form .priorities .qualifications {
+    min-width: 5rem;
+  }
+  /* card em coluna: botões descem para baixo do texto */
+  main .datas-entries .container_element {
+    grid-template-columns: 1fr;
+    padding: 0.8rem;
+  }
+  main .datas-entries .container_element .contaner_btn {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  main .datas-entries .container_element button {
+    flex: 1;
+    width: auto;
+    min-width: 6rem;
+    margin: 0;
+  }
+}
